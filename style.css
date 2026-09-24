@@ -1,0 +1,317 @@
+/* --- Thiết lập chung (Reset & Base Styles) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;    
+    line-height: 1.6;
+    color: #9dff90;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Định dạng Header / Navigation --- */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 24px;
+    color: #2e7d32; /* Xanh lá màu đậm */
+}
+
+.logo span {
+    color: #00e676; /* Xanh lá sáng */
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #2e7d32;
+}
+
+/* --- Định dạng Banner (Hero) --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://unsplash.com') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    margin-top: 60px; /* Bù khoảng trống cho thanh navbar cố định */
+}
+
+.hero-content h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2e7d32;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #1b5e20;
+    transform: translateY(-3px);
+}
+
+/* --- Bố cục dạng Lưới (Grid & Cards) --- */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #2e7d32;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00e676;
+    margin: 10px auto 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #1b5e20;
+}
+
+/* --- Định dạng khu vực Hành Động --- */
+.actions-section {
+    background-color: #e8f5e9; /* Nền xanh lá nhạt */
+}
+
+.action-item {
+    background-color: #fff;
+    padding: 25px;
+    border-left: 5px solid #2e7d32;
+    border-radius: 0 8px 8px 0;
+}
+
+.action-item h4 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* --- Chân trang (Footer) --- */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* --- Hỗ trợ Responsive trên Mobile --- */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+    }
+    .hero-content h2 {
+        font-size: 30px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+/* --- Dành cho Máy tính bảng (Màn hình từ 769px đến 1024px) --- */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%; /* Tăng diện tích hiển thị trên tablet */
+    }
+    .hero-content h2 {
+        font-size: 38px; /* Thu nhỏ tiêu đề một chút */
+    }
+}
+
+/* --- Dành cho Điện thoại di động (Màn hình dưới 768px) --- */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column; /* Chuyển menu từ hàng ngang thành hàng dọc */
+        gap: 10px;
+    }
+    nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 0 10px; /* Thu hẹp khoảng cách giữa các mục menu */
+    }
+    .hero {
+        height: 80vh; /* Giảm chiều cao banner để vừa màn hình dọc */
+    }
+    .hero-content h2 {
+        font-size: 28px;
+    }
+    .hero-content p {
+        font-size: 15px;
+    }
+    .section-title {
+        font-size: 26px; /* Tiêu đề phần nhỏ hơn */
+    }
+    .card, .action-item {
+        padding: 20px; /* Giảm padding để tiết kiệm không gian trên điện thoại */
+    }
+}
+.hero {
+    background-image: url('./hinh-nen-cay-xanh-1.png');
+    background-size: cover;       /* Co giãn ảnh vừa vặn toàn màn hình */
+    background-position: center;   /* Căn ảnh chính giữa */
+    background-repeat: no-repeat;  /* Không lặp lại ảnh nếu màn hình quá lớn */
+    background-attachment: fixed;  /* Tạo hiệu ứng cuộn trang ảnh nền đứng yên (tùy chọn) */
+}
+/* --- Thiết kế nút bật/tắt nhạc nền --- */
+.music-toggle-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 9999;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    
+    background-color: #ffffff;
+    color: #2e7d32; /* Màu xanh lá chủ đạo */
+    border: 2px solid #2e7d32;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào nút (Hover) */
+.music-toggle-btn:hover {
+    background-color: #2e7d32;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng đập nhẹ liên tục khi nhạc ĐANG PHÁT */
+.music-toggle-btn.playing {
+    background-color: #2e7d32;
+    color: #ffffff;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(46, 125, 50, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+    }
+}
+
+/* Tối ưu hiển thị thu gọn trên điện thoại di động */
+@media (max-width: 480px) {
+    .music-toggle-btn {
+        bottom: 15px;
+        left: 15px;
+        padding: 10px; /* Biến thành nút tròn */
+        border-radius: 50%;
+    }
+    .music-text {
+        display: none; /* Ẩn chữ "Nhạc nền", chỉ giữ lại icon trên điện thoại */
+    }
+}
+
+

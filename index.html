@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chung Tay Bảo Vệ Môi Trường - Hành Động Vì Tương Lai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Thanh điều hướng (Header) -->
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Hành Trình <span>Xanh</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Trang Chủ</a></li>
+                    <li><a href="#reasons">Tại Sao?</a></li>
+                    <li><a href="#actions">Hành Động</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Khu vực Banner (Hero Section) -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Bảo Vệ Môi Trường Là Bảo Vệ Chính Mình</h2>
+            <p>Mỗi một hành động nhỏ ngày hôm nay sẽ góp phần thay đổi diện mạo của Trái Đất vào ngày mai. Hãy chung tay ngay từ bây giờ!</p>
+<!-- Sửa từ href="#actions" thành đường link trang web bạn muốn -->
+            <a href="./index2.html" class="btn" target="_blank">Tham Gia Ngay</a>
+
+        </div>
+    </section>
+
+    <!-- Khu vực Thực trạng / Lý do (Reasons) -->
+    <section id="reasons" class="features container">
+        <h3 class="section-title">Tại sao chúng ta phải hành động?</h3>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🌍</div>
+                <h4>Biến đổi khí hậu</h4>
+                <p>Nhiệt độ toàn cầu đang tăng cao làm tan băng ở hai cực, gây ra thiên tai dữ dội và đe dọa trực tiếp đến cuộc sống con người.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🗑️</div>
+                <h4>Ô nhiễm rác thải nhựa</h4>
+                <p>Hàng triệu tấn nhựa xả ra đại dương mỗi năm, làm chết sinh vật biển và hạt vi nhựa đang dần len lỏi vào chuỗi thức ăn.</p>
+            </div>
+            <div class="card">
+                <div class="icon">💨</div>
+                <h4>Ô nhiễm không khí</h4>
+                <p>Khói bụi từ nhà máy, xe cộ làm giảm chất lượng sống và gây ra hàng loạt căn bệnh nguy hiểm về đường hô hấp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Khu vực Gợi ý Hành động (Actions) -->
+    <section id="actions" class="actions-section">
+        <div class="container">
+            <h3 class="section-title">Chúng ta có thể làm gì?</h3>
+            <div class="grid">
+                <div class="action-item">
+                    <h4>1. Quy tắc 3R (Reduce - Reuse - Recycle)</h4>
+                    <p>Tiết giảm nhu cầu sử dụng, tái sử dụng các đồ dùng còn tốt và phân loại rác để tái chế một cách khoa học.</p>
+                </div>
+                <div class="action-item">
+                    <h4>2. Trồng thêm cây xanh</h4>
+                    <p>Cây xanh cung cấp oxy, giữ đất, lọc bụi mịn và điều hòa khí hậu toàn cầu. Hãy trồng cây tại bất cứ nơi nào có thể.</p>
+                </div>
+                <div class="action-item">
+                    <h4>3. Tiết kiệm tài nguyên</h4>
+                    <p>Tắt các thiết bị điện khi ra khỏi phòng, sử dụng nước tiết kiệm và ưu tiên đi bộ, đi xe đạp hoặc phương tiện công cộng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chân trang (Footer) -->
+    <footer>
+        <p>2026 Chiến Dịch Hành Trình Xanh. Tất cả vì một hành tinh tươi đẹp.</p>
+    </footer>
+    <!-- Nút bật/tắt nhạc nền tùy chỉnh -->
+    <button id="music-btn" class="music-toggle-btn" title="Bật/Tắt nhạc nền">
+        <span id="music-icon">🎵</span>
+        <span class="music-text">Nhạc nền</span>
+    </button>
+
+    <!-- Thẻ audio ẩn đi (không dùng thuộc tính controls) -->
+    <audio id="bg-music" src="./saikai.mp3.mp3" loop></audio>
+
+    <!-- Đoạn JavaScript xử lý hành động bật/tắt -->
+    <script>
+        const bgMusic = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-btn');
+        const musicIcon = document.getElementById('music-icon');
+
+        // Thiết lập âm lượng vừa phải (30%) để không làm người dùng giật mình
+        bgMusic.volume = 0.3; 
+
+        musicBtn.addEventListener('click', function() {
+            if (bgMusic.paused) {
+                // Nếu nhạc đang dừng -> Phát nhạc và đổi trạng thái nút
+                bgMusic.play();
+                musicBtn.classList.add('playing');
+                musicIcon.innerText = '🔊'; // Đổi icon sang loa đang phát
+            } else {
+                // Nếu nhạc đang phát -> Dừng nhạc và đổi trạng thái nút
+                bgMusic.pause();
+                musicBtn.classList.remove('playing');
+                musicIcon.innerText = '🔇'; // Đổi icon sang loa tắt tiếng
+            }
+        });
+    </script>
+    <!-- Thẻ âm thanh hiệu ứng click -->
+    <audio id="click-sound" src="./clicksound.mp3" preload="auto"></audio>
+
+</body>
+</html>
