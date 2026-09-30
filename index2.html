@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I will win</title>
+    <title>Form Liên Hệ Đơn Giản</title>
+    <!-- Kết nối đến file CSS bên ngoài -->
     <link rel="stylesheet" href="./style2.css">
 </head>
 <body>
-    <h1>Hello</h1>
-    
+
+    <div class="form-container">
+        <h2>Form Liên Hệ</h2>
+        <!-- Thay đổi action thành địa chỉ trang web bạn muốn chuyển tới -->
+        <form action="./index3.html" method="GET">
+            
+            <!-- Ô nhập Họ và Tên -->
+            <div class="form-group">
+                <label for="name">Họ và tên *</label>
+                <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
+            </div>
+
+            <!-- Ô nhập Email -->
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <!-- Ô nhập Số điện thoại -->
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" placeholder="0123456789">
+            </div>
+
+            <!-- Ô nhập Lời nhắn -->
+            <div class="form-group">
+                <label for="message">Lời nhắn</label>
+                <textarea id="message" name="message" rows="4" placeholder="Nhập nội dung tin nhắn của bạn..."></textarea>
+            </div>
+
+            <!-- Nút gửi dữ liệu -->
+            <button type="submit" class="submit-btn">Gửi thông tin</button>
+            
+        </form>
+    </div>
+
 </body>
 </html>
